@@ -1,0 +1,20 @@
+server:
+   port:  8001
+
+spring:
+  application:    name: user-provide
+  datasource:                                     #设置数据源信息
+    type: com.alibaba.druid.pool.DruidDataSource  #设置数据库连接池的类型
+    driver-class-name: org.gjt.mm.mysql.Driver    #设置数据库驱动包
+    url: jdbc:mysql://127.0.0.1:3306/firstdb?characterEncoding=utf-8&useSSL=true  #设置数据库的url，数据库字符类型：UTF-8
+    username: root
+    password: 789123
+    dbcp2:
+      min-idle: 5             #设置最小的连接数据
+      initial-size: 5         #设置当前数据库连接池启动时，创建的连接数
+      max-total: 10           #设置最大的连接数
+      max-wait-millis: 2000   #设置最大的等待时间
+  jpa:
+    show-sql: true
+   
+eureka:  client:    service-url:      defaultZone: http://localhost:9000/eureka
